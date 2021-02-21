@@ -12,7 +12,7 @@
 
 body {
     width: 100vw;
-    min-height: 100vh;
+    height: auto;
     font-family: "Roboto";
     background-image: url(background-image.png);
     background-size:cover;
@@ -152,6 +152,7 @@ nav a {
 
 /* product section */
 .product {
+    position: relative;
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -219,6 +220,26 @@ nav a {
     cursor: pointer;
 }
 
+#notif-container {
+    width: 400px;
+    height: auto;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.toast {
+    background-color: black;
+    color: white;
+    padding: .5rem 2rem;
+    margin: 1em;
+    transition: 300ms;
+}
+
 /* responsive */
 @media screen and (max-width:1024px) {
     .product-image img {
@@ -279,5 +300,28 @@ nav a {
 
     .product-description h1 {
         font-size: 24px;
+    }
+
+    #notif-container {
+        width: 100%;
+        height: 65px;
+        bottom: 8rem;
+        right: unset;
+        top: unset;
+        overflow: hidden;
+    }
+    
+    .toast {
+        width: 80%;
+        height: 100%;
+        border: solid 1px black;
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(5px);
+        color: rgb(0, 0, 0);
+        transition: 300ms;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: unset;
     }
 }
